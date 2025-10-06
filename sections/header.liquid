@@ -1,3 +1,5 @@
+
+
 {% liquid
   assign order = 'logo,menu,localization,search,mobile_search,actions'
 
@@ -146,10 +148,6 @@
 
   if section.settings.section_height == 'compact'
     assign header_height_class = ' header--compact'
-  endif
-
-  if section.settings.section_height == 'large'
-    assign header_height_class = ' header--large'
   endif
 
   if bottom_row_blocks.size > 0 and section.settings.color_scheme_top.settings.background.rgb == section.settings.color_scheme_bottom.settings.background.rgb and section.settings.divider_width == 0
@@ -595,10 +593,6 @@
     --header-padding: var(--padding-2xs);
   }
 
-  .header.header--large {
-    --header-padding: var(--padding-4xl);
-  }
-
   .header__columns {
     --padding-block-start: var(--header-padding);
     --padding-block-end: var(--header-padding);
@@ -682,7 +676,7 @@
           "label": "t:options.right"
         }
       ],
-      "default": "left"
+      "default": "center"
     },
     {
       "type": "header",
@@ -706,7 +700,7 @@
           "label": "t:options.right"
         }
       ],
-      "default": "center"
+      "default": "left"
     },
     {
       "type": "select",
@@ -905,8 +899,7 @@
           "value": "full-width",
           "label": "t:options.full"
         }
-      ],
-      "default": "full-width"
+      ]
     },
     {
       "type": "select",
@@ -920,13 +913,9 @@
         {
           "value": "standard",
           "label": "t:options.standard"
-        },
-        {
-          "value": "large",
-          "label": "Large"
         }
       ],
-      "default": "large"
+      "default": "standard"
     },
     {
       "type": "select",
