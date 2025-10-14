@@ -1,0 +1,27 @@
+{% doc %}
+  @param [limit] - {number}
+  @param [live_region] - {boolean}
+
+  The maximum number of items in the cart to display. If the number of items in the cart is greater than this limit, the
+  count will be displayed as "99+".
+{% enddoc %}
+<span
+  ref="cartDisplay"
+  class="cart-count"
+  {% if live_region %}
+    role="status"
+  {% endif %}
+>
+  <span class="visually-hidden">
+    {{- 'accessibility.cart_count' | t -}}
+    : {{ cart.item_count }}
+  </span>
+
+  <span
+    class="cart-count__text-count"
+    ref="cartDisplayText"
+    aria-hidden="true"
+  >
+    ( <span ref="cartDisplayNumber">{{ cart.item_count }}</span> )
+  </span>
+</span>

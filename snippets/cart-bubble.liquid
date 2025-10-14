@@ -7,7 +7,7 @@
 {%- enddoc -%}
 
 <div
-  ref="cartBubble"
+  ref="cartDisplay"
   class="cart-bubble{% if cart == empty %} visually-hidden{% endif %}"
   {% assign item_count = cart.item_count %}
   {% if item_count <= 99 %}
@@ -16,7 +16,7 @@
 >
   <span class="cart-bubble__background"></span>
   <span
-    ref="cartBubbleText"
+    ref="cartDisplayText"
     class="cart-bubble__text"
     {% if live_region %}
       role="status"
@@ -28,7 +28,7 @@
     </span>
     <span
       class="cart-bubble__text-count{% if cart == empty %} hidden{% endif %}"
-      ref="cartBubbleCount"
+      ref="cartDisplayNumber"
       aria-hidden="true"
       data-testid="cart-bubble"
     >

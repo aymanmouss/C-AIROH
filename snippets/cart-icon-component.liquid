@@ -4,7 +4,8 @@
 <cart-icon
   class="
     header-actions__cart-icon
-    {% unless cart == empty %} header-actions__cart-icon--has-cart{% endunless %}
+    {% unless cart == empty or settings.cart_count == 'count'%} header-actions__cart-icon--has-cart{% endunless %}
+    {% unless settings.cart_count == 'bubble' %} header-actions__cart-icon-count {% endunless %}
   "
   data-testid="cart-icon"
 >
@@ -14,8 +15,11 @@
   >
     {{ 'icon-cart.svg' | inline_asset_content }}
   </span>
-
-  {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
+  {% if settings.cart_count == 'count' %}
+    {% render 'cart-count', limit: 100, live_region: true, test_id: cartcount_id %}
+  {% else %}
+    {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
+  {% endif %}
 </cart-icon>
 
 {% stylesheet %}
@@ -28,5 +32,8 @@
       --cart-bubble-top: 4px;
       --cart-bubble-right: 4px;
     }
+  }
+  cart-icon:has(.header-actions__cart-icon-count) {
+    --cart-count-font-size: 0.9rem;
   }
 {% endstylesheet %}
