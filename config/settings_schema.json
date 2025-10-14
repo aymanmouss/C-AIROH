@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Horizon",
+    "theme_name": "Airoh",
     "theme_version": "3.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_author": "Althyo",
+    "theme_documentation_url": "https://help.althyo.com/manual/online-store/themes",
+    "theme_support_url": "https://support.althyo.com/"
   },
   {
     "name": "t:names.logo_and_favicon",
@@ -1678,6 +1678,22 @@
           }
         ],
         "default": "page"
+      },
+      {
+        "type": "select",
+        "id": "cart_count",
+        "label": "Cart count style",
+        "options": [
+          {
+            "value": "bubble",
+            "label": "Bubble"
+          },
+          {
+            "value": "count",
+            "label": "Count"
+          }
+        ],
+        "default": "count"
       },
       {
         "type": "select",
